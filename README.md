@@ -19,7 +19,7 @@ STEP 5> Configure appsettings.json
 nano appsettings.json
 {
   "ConnectionStrings": {
-    "DefaultConnection": "Server=<RDS-ENDPOINT>;Port=3306;Database=DataWarehouse;User=dbuser;Password=StrongPassword;"
+    "DefaultConnection": "Server=127.0.0.1;Port=3306;Database=DataWarehous;User=root;Password=root123;"
   }
 }
 STEP 6> Run the Application
