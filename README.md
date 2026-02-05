@@ -116,7 +116,7 @@ Update the connection string:
 ```json
 {
   "ConnectionStrings": {
-    "DefaultConnection": "Server=127.0.0.1;Port=3306;Database=DataWarehouse;User=root;Password=root123;"
+    "DefaultConnection": "Server=127.0.0.1;Database=DataWarehous;User=root;Password=root123;"
   }
 }
 ```
