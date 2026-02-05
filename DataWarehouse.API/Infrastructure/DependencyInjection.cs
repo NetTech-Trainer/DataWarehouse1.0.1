@@ -5,11 +5,19 @@ namespace DataWarehouse.API.Infrastructure;
 
 public static class DependencyInjection
 {
-    public static IServiceCollection AddInfrastructure(this IServiceCollection services, IConfiguration configuration)
+    public static IServiceCollection AddInfrastructure(
+        this IServiceCollection services,
+        IConfiguration configuration)
     {
-        // EF Core DbContext
+        // EF Core DbContext - MySQL
         services.AddDbContext<ApplicationDbContext>(options =>
-            options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+            options.UseMySql(
+                configuration.GetConnectionString("DefaultConnection"),
+                ServerVersion.AutoDetect(
+                    configuration.GetConnectionString("DefaultConnection")
+                )
+            )
+        );
 
         // Repositories
         services.AddScoped<OrderRepository>();
@@ -17,3 +25,4 @@ public static class DependencyInjection
         return services;
     }
 }
+
